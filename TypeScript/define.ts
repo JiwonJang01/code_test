@@ -1,4 +1,4 @@
-// 변수에 타입 지정정
+// 변수에 타입 지정
 let name: string = "Jiwon";
 let age: number = 25;
 let isStudent: boolean = true;
@@ -7,7 +7,7 @@ let isStudent: boolean = true;
 let numbers: number[] = [1, 2, 3];
 let names: string[] = ["Alice", "Bob"];
 
-// 객체에 타입 지정정
+// 객체에 타입 지정
 let user: { name: string; age: number } = { name: "Jiwon", age: 25 };
 
 // 유니온 타입
