@@ -1,0 +1,89 @@
+/*
+Stack
+- 후입 선출
+*/
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        // 데이터 추가 (push)
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        System.out.println("Stack: " + stack); // [1, 2, 3]
+
+        // 데이터 제거 (pop)
+        System.out.println("pop: " + stack.pop()); // 3
+        System.out.println("Stack after pop: " + stack); // [1, 2]
+
+        // 맨 위 요소 확인 (peek)
+        System.out.println("peek: " + stack.peek()); // 2
+    }
+}
+
+/*
+Queue
+- 선입 선출
+*/
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueExample {
+    public static void main(String[] args) {
+        Queue<Integer> queue = new LinkedList<>();
+
+        // 데이터 추가 (offer)
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(3);
+
+        System.out.println("Queue: " + queue); // [1, 2, 3]
+
+        // 데이터 제거 (poll)
+        System.out.println("poll: " + queue.poll()); // 1
+        System.out.println("Queue after poll: " + queue); // [2, 3]
+
+        // 맨 앞 요소 확인 (peek)
+        System.out.println("peek: " + queue.peek()); // 2
+    }
+}
+
+/*
+Heap
+- 완전 이진 트리 기반의 자료구조
+- 우선 순위 Queue로 많이 사용
+- 최소 힙: 루트가 가장 작은 값
+- 최대 힙: 루트가 가장 큰 값
+*/
+import java.util.PriorityQueue;
+
+public class HeapExample {
+    public static void main(String[] args) {
+        // 최소 힙 (기본)
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        // 데이터 추가
+        minHeap.offer(3);
+        minHeap.offer(1);
+        minHeap.offer(2);
+
+        System.out.println("Min Heap: " + minHeap); // 내부 구조는 다를 수 있음
+
+        // 최솟값 제거
+        System.out.println("poll: " + minHeap.poll()); // 1
+        System.out.println("Min Heap after poll: " + minHeap); // [2, 3]
+
+        // 최대 힙 (내림차순 정렬)
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+        maxHeap.offer(3);
+        maxHeap.offer(1);
+        maxHeap.offer(2);
+
+        System.out.println("Max Heap: " + maxHeap);
+        System.out.println("poll: " + maxHeap.poll()); // 3
+        System.out.println("Max Heap after poll: " + maxHeap); // [2, 1]
+    }
+}
